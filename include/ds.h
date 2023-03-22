@@ -12,7 +12,7 @@ typedef struct {
 } status_t;
 
 typedef struct {
-    int mtype;
+    long mtype;
     char mtext[SIZE];
 } msgbuf_t;
 

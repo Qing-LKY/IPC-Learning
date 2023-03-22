@@ -1,4 +1,4 @@
-OBJ := libmsg.o main.o
+OBJ := libmsg.o prework.o interact.o main.o
 INCLUDE := $(addprefix ../, $(INCLUDE))
 TARGET := ../$(TARGET)
 CFLAGS += $(patsubst %, -I%, $(INCLUDE))

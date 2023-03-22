@@ -53,11 +53,12 @@ int send_msg(int msqid, int type, const char *s) {
     }
     tmp.mtype = type;
     re = msgsnd(msqid, &tmp, len, IPC_NOWAIT);
+    // printf("%ld %s %d\n", tmp.mtype, tmp.mtext, len);
     if (re == -1) perror("msgsnd");
     return re == -1 ? -1 : len;
 }
 
-int recv_msg(int msqid, int type, char *buf) {
+int recv_msg(int msqid, int type, void *buf) {
     int re;
     re = msgrcv(msqid, buf, SIZE, type, IPC_NOWAIT);
     // if (re == -1) {

@@ -8,6 +8,6 @@ int create_queue(key_t key);
 int remove_queue(int msqid);
 int connect_queue(key_t key, int *msqid);
 int send_msg(int msqid, int type, const char *s);
-int recv_msg(int msqid, int type, char *buf);
+int recv_msg(int msqid, int type, void *buf);
 
 #endif
